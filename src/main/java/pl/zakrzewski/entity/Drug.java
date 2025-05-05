@@ -25,6 +25,9 @@ public class Drug {
     @Enumerated(EnumType.STRING)
     private DrugType drugType;
 
+    @Version
+    private Integer version;
+
     @PostLoad
     public void calculateAge() {
         age = ChronoUnit.YEARS.between(prodYear, LocalDate.now());
@@ -79,6 +82,7 @@ public class Drug {
                 ", price=" + price +
                 ", age=" + age +
                 ", drugType=" + drugType +
+                ", version=" + version +
                 '}';
     }
 
